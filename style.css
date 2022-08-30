@@ -1,0 +1,498 @@
+@import url('https://fonts.googleapis.com/css2?family=Fredericka+the+Great&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'SF Pro';
+    text-decoration: none;
+    list-style: none;
+    box-sizing: border-box;
+    font-size: 28px;
+}
+
+@font-face {
+    font-family: 'SF Pro';
+    src: url(Lib/Fonts/TrueType/SFProText-Medium.ttf);
+}
+
+:root {
+    --primary-color: #99D3DF;
+    --secondary-color: #6DA6B2;
+    --font-color: #E9E9E9;
+    --bg-color: #EEFCFF;
+    --header-color: #6DA6B2;
+    --toggle-color: #111;
+    --ball-color: #fff;
+}
+
+[data-theme="dark"] {
+    --primary-color: #99D3DF;
+    --secondary-color: #6DA6B2;
+    --font-color: #E4E6EB;
+    --secondary-font-color: #B0B3B8;
+    --bg-color: #18191A;
+    --header-color: #242526;
+    --toggle-color: #fff;
+    --ball-color: #111;
+}
+
+body {
+    background-color: var(--bg-color);
+}
+
+header {
+    width: 100%;
+    height: 90px;
+    top: 0;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    position: absolute;
+    background-color: var(--header-color);
+    color: var(--font-color);
+    display: flex;
+    align-items: center;
+}
+
+.navMenu {
+    padding: 28px 0px;
+    width: 600px;
+    height: 100%;
+    margin-left: 300px;
+}
+
+.navMenu a {
+    padding-right: 50px;
+    color: var(--font-color);
+    font-family: 'Fredericka the Great';
+}
+
+.logo {
+    height: 60px;
+    width: 60px;
+    vertical-align: top;
+    float: left;
+    position: relative;
+    margin-left: 100px;
+}
+
+.memoji {
+    height: 307px;
+    width: 307px;
+    margin-left: 106px;
+    margin-top: 223px;
+    border: 2px solid;
+    border-radius: 153.5px;
+}
+
+.content {
+    top: 90px;
+    height: 800px;
+}
+
+.column {
+    padding-top: 10px;
+    margin-left: 30px;
+    width: 40px;
+    text-align: center;
+    position: fixed;
+    bottom: 0;
+    padding-bottom: 10px;
+}
+
+.set {
+    margin: 5px;
+}
+
+a.social {
+    display: inline-block;
+    height: 40px;
+    line-height: 40px;
+    margin-right: 10px;
+    overflow: hidden;
+    position: relative;
+    text-indent: -9999em;
+    visibility: hidden;
+    width: 40px;
+}
+
+a.social:before,
+a.social:after {
+    color: #f1f1f1;
+    content: "";
+    display: inline-block;
+    font-family: FontAwesome;
+    font-size: 30px;
+    height: 40px;
+    line-height: 44px;
+    position: absolute;
+    right: 0;
+    text-align: center;
+    text-indent: 0;
+    visibility: visible;
+    width: 40px;
+}
+
+a.social:after {
+    left: 0;
+    position: absolute;
+}
+
+a.facebook:before {
+    background: #3b5998;
+}
+
+a.facebook:after {
+    content: "\f09a";
+    top: -1px;
+}
+
+a.github:before {
+    background: #24292f;
+}
+
+a.github:after {
+    content: "\f09b";
+    left: 0;
+    top: 0;
+}
+
+a.instagram:before {
+    background: linear-gradient(45deg,
+            #405de6,
+            #5851db,
+            #833ab4,
+            #c13584,
+            #e1306c,
+            #fd1d1d);
+}
+
+a.instagram:after {
+    content: "\f16d";
+    top: -1px;
+}
+
+a.linked-in:before {
+    background: #007bb6;
+}
+
+a.linked-in:after {
+    content: "\f0e1";
+    top: -1px;
+}
+
+a.google:before {
+    background: linear-gradient(-120deg, #4285f4, #34a853, #fbbc05, #ea4335);
+}
+
+a.google:after {
+    content: "\f1a0";
+    top: -1px;
+}
+
+.rounded a.social:before {
+    border-radius: 50%;
+}
+
+.overflowed.rounded a.social:before,
+.overflowed.rounded a:hover.social:before {
+    height: 32px;
+    margin: 4px;
+    width: 32px;
+}
+
+.overflowed.rounded a.facebook:after,
+.overflowed.rounded a:hover.facebook:after {
+    text-shadow: 0 0 3px #3b5998;
+}
+
+.overflowed.rounded a.github:after,
+.overflowed.rounded a:hover.twitter:after {
+    text-shadow: 0 0 3px #24292f;
+}
+
+.overflowed.rounded a.google:after,
+.overflowed.rounded a:hover.google:after {
+    text-shadow: 0 0 3px linear-gradient(-120deg, #4285f4, #34a853, #fbbc05, #ea4335);
+}
+
+.overflowed.rounded a.instagram:after,
+.overflowed.rounded a:hover.instagram:after {
+    text-shadow: 0 0 3px linear-gradient(45deg, #405de6, #5851db, #833ab4, #c13584, #e1306c, #fd1d1d);
+}
+
+.overflowed.rounded a.linked-in:after,
+.overflowed.rounded a:hover.linked-in:after {
+    text-shadow: 0 0 3px #007bb6;
+}
+
+.overflowed a.social,
+.overflowed a:hover.social {
+    overflow: visible;
+}
+
+.overflowed a.social:after,
+.overflowed a:hover.social:after {
+    font-size: 46px;
+    line-height: 46px;
+}
+
+.overflowed a.facebook:after,
+.overflowed a:hover.facebook:after {
+    font-size: 44px;
+}
+
+.overflowed a.github:after,
+.overflowed a:hover.github:after {
+    font-size: 50px;
+    left: -4px;
+    top: -1px;
+}
+
+.overflowed a.instagram:after,
+.overflowed a:hover.instagram:after {
+    font-size: 47px;
+    top: -2px;
+}
+
+.overflowed a.linked-in:after,
+.overflowed a:hover.linked-in:after {
+    font-size: 45px;
+}
+
+.overflowed a.google:after,
+.overflowed a:hover.google:after {
+    font-size: 44px;
+}
+
+.raised a.social:before,
+.raised a:hover.social:before {
+    display: none;
+}
+
+.raised a.facebook:after,
+.raised a:hover.facebook:after {
+    text-shadow: 0 0 3px #3b5998, 0 3px 3px #3b5998;
+}
+
+.raised a.github:after,
+.raised a:hover.github:after {
+    text-shadow: 0 0 3px #24292f, 0 3px 3px white;
+}
+
+.raised a.instagram:after,
+.raised a:hover.instagram:after {
+    text-shadow: 0 0 3px linear-gradient(45deg,
+            #405de6,
+            #5851db,
+            #833ab4,
+            #c13584,
+            #e1306c,
+            #fd1d1d),
+        0 3px 3px linear-gradient(45deg,
+            #405de6,
+            #5851db,
+            #833ab4,
+            #c13584,
+            #e1306c,
+            #fd1d1d);
+}
+
+.raised a.linked-in:after,
+.raised a:hover.linked-in:after {
+    text-shadow: 0 0 3px #08394f, 0 3px 3px #007bb6;
+}
+
+.raised a.google:after,
+.raised a:hover.google:after {
+    text-shadow: 0 0 3px linear-gradient(-120deg, #4285f4, #34a853, #fbbc05, #ea4335),
+        0 3px 3px linear-gradient(-120deg, #4285f4, #34a853, #fbbc05, #ea4335);
+}
+
+.fg-rise a:after {
+    transition: all 0.3s ease-in-out;
+}
+
+.fg-rise a:hover:after {
+    transform: translateY(-8px);
+}
+
+.fg-rise.fg-inflate a:after {
+    transform: scale(1) translateY(0);
+    transition: all 0.3s ease-in-out;
+}
+
+.fg-rise.fg-inflate a:hover:after {
+    transform: scale(1.4) translateY(-8px);
+}
+
+.fg-color a:after,
+.bg-fade a:after {
+    color: #fff;
+    transition: all 0.3s ease-in-out;
+}
+
+.fg-color a:hover.facebook:after,
+.bg-fade a:hover.facebook:after {
+    color: #f9f8f9;
+}
+
+.fg-color a:hover.github:after,
+.bg-fade a:hover.github:after {
+    color: #f9f8f9;
+}
+
+.fg-color a:hover.instagram:after,
+.bg-fade a:hover.instagram:after {
+    color: #f9f8f9;
+}
+
+.fg-color a:hover.linked-in:after,
+.bg-fade a:hover.linked-in:after {
+    color: #f9f8f9;
+}
+
+.fg-color a:hover.google:after,
+.bg-fade a:hover.google:after {
+    color: linear-gradient(-120deg, #4285f4, #34a853, #fbbc05, #ea4335);
+}
+
+.bg-fall a {
+    overflow: visible;
+    perspective: 40px;
+    position: relative;
+}
+
+.bg-fall a:before {
+    transform: rotateX(0deg);
+    transform-origin: center 44px;
+    transform-style: preserve-3d;
+    transition: all 0.3s ease-in-out;
+}
+
+.bg-fall a:hover:before {
+    transform: rotateX(90deg);
+}
+
+.bg-fall a:hover.facebook:before {
+    background: linear-gradient(top, transparent, rgba(59, 89, 152, 0.7));
+}
+
+.bg-fall a:hover.github:before {
+    background: linear-gradient(top, transparent, rgba(36, 41, 47, 0.7));
+}
+
+.bg-fall a:hover.instagram:before {
+    background: linear-gradient(top, transparent, rgba(120, 76, 172, 0.7));
+}
+
+.bg-fall a:hover.linked-in:before {
+    background: linear-gradient(top, transparent, rgba(0, 123, 182, 0.7));
+}
+
+.bg-fall a:hover.google:before {
+    background: linear-gradient(top, transparent, rgba(0, 123, 182, 0.7));
+}
+
+.scroll-to-top {
+    position: relative;
+}
+
+.btn-position {
+    position: fixed;
+    bottom: 40px;
+    right: 25px;
+    z-index: 20;
+}
+
+.btn-style {
+    background-color: #E4DCCF;
+    border: 2px solid #fff;
+    border-radius: 50%;
+    height: 50px;
+    width: 50px;
+    color: #fff;
+    cursor: pointer;
+    transition: all 0.5s ease-in-out;
+    font-size: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    visibility: hidden;
+}
+
+.icon-style:hover {
+    background: #fff;
+    color: #d3ae64;
+    border: 2px solid #d3ae64;
+}
+
+@keyframes move-btn {
+    0% {
+        transform: translateY(0px);
+    }
+
+    25% {
+        transform: translateY(20px);
+    }
+
+    50% {
+        transform: translateY(0px);
+    }
+
+    75% {
+        transform: translateY(-20px);
+    }
+
+    100% {
+        transform: translateY(0px);
+    }
+}
+
+.toggle-wrapper {
+    margin-left: 256px;
+    order: 2;
+}
+
+.checkbox {
+    opacity: 0;
+    position: absolute;
+}
+
+.label {
+    background-color: var(--toggle-color);
+    border-radius: 50px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 5px;
+    position: relative;
+    height: 25px;
+    width: 50px;
+    transform: scale(1.5);
+}
+
+.label .ball {
+    background-color: var(--ball-color);
+    border-radius: 50%;
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    height: 22px;
+    width: 22px;
+    transform: translateX(0px);
+    transition: transform 0.2s linear;
+}
+
+.checkbox:checked+.label .ball {
+    transform: translateX(24px);
+}
+
+.fa-moon {
+    color: #f1c40f;
+}
+
+.fa-sun {
+    color: #f39c12;
+}
